@@ -1,10 +1,14 @@
 package routes
 
-import "github.com/gin-gonic/gin"
+import (
+	"backend/controllers"
+
+	"github.com/gin-gonic/gin"
+)
 
 func OrderRoutes(incomingRoutes *gin.Engine) { 
-	incomingRoutes.GET("/orders", controller.GetOrders())
-	incomingRoutes.GET("/order/:order_id", controller.GetOrder())
-	incomingRoutes.POST("/orders", controller.CreateOrder())
-	incomingRoutes.PATCH("/orders/:order_id", controller.UpdateOrder())
+	incomingRoutes.GET("/orders", controllers.GetOrders())
+	incomingRoutes.GET("/order/:order_id", controllers.GetOrder())
+	incomingRoutes.POST("/orders", controllers.CreateOrder())
+	incomingRoutes.PATCH("/orders/:order_id", controllers.UpdateOrder())
 }
