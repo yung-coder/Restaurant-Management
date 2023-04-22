@@ -11,7 +11,7 @@ import (
 )
 
 func DBinstance() *mongo.Client {
-	MongoDb := "fsdfdfdsfds"
+	MongoDb := "mongodb+srv://chandelsanjeev5:sak123@fiber.oksyndw.mongodb.net/?retryWrites=true&w=majority"
 	fmt.Println(MongoDb)
 
 	client, err := mongo.NewClient(options.Client().ApplyURI(MongoDb))
