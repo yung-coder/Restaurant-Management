@@ -40,7 +40,7 @@ func GetOrder() gin.HandlerFunc {
 		orderId := c.Param("order_id")
 		var order models.Order
 
-		err := foodCollection.FindOne(ctx, bson.M{"order_id": orderId}).Decode(&order)
+		err := orderCollection.FindOne(ctx, bson.M{"order_id": orderId}).Decode(&order)
 		defer cancel()
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "error occured while fetching the order"})
